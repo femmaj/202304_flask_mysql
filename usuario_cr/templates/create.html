@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block head_title %}Create a user{% endblock %}
+
+{% block content %}
+<div class="container">
+    <a href="/users" class="btn btn-secondary float-end">Home</a>
+
+    <form action="/user/create" method="post" class="col-6 mx-auto">
+
+        <h2 class="text-center">Add User</h2>
+        <div class="form-group">
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name"  class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name"  class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" name="email"  class="form-control">
+        </div>
+        <input type="submit" value="Add User" class="btn btn-success my-3">
+    </form>
+</div>
+
+{% endblock %}
