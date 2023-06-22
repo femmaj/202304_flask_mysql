@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block head_title %}Ninjas en Dojos{% endblock %}
+
+{% block content %}
+
+<div class="card-body">
+    <h2 class="card-title mb-3"> Ninjas en {{dojo.name}}</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ninja in dojo.ninjas %}
+            <tr>
+                <td>{{ ninja.first_name }}</td>
+                <td>{{ ninja.last_name }}</td>
+                <td>{{ ninja.age }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<a href="/" class="btn btn-secondary">Home</a>
+</div>
+
+{% endblock %}

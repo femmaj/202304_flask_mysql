@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block head_title %}Dojos y ninjas{% endblock %}
+
+{% block content %}
+
+<div class="d-flex justify-content-around">
+    <form action="/create/dojo" method="post" class="card col-4 bg-light p-4 my-5" >
+        <h2 class="text-center">Nuevo Dojo</h2>
+        <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" name="name" class="form-control">
+        </div>
+        <input type="submit" value="Agregar Dojo" class="btn btn-primary my-3">
+    </form>
+    <div class="card col-4 bg-light p-4 my-5">
+        <h2 class="text-center">Todos los Dojos</h2>
+        {% for d in all_dojos %}
+        <p> 
+            <a href="/dojo/{{d.id}}">{{d.name}}</a>
+        </p>
+        {% endfor %}
+    </div>
+</div>
+<div class="container">
+    <a href="/ninjas" class="btn btn-primary">Agregar un Ninja</a>
+</div>
+
+
+
+{% endblock %}
